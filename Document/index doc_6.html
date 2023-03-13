@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>
+      <a href="https://google.com">https://google.com</a>
+    </li>
+    <li>
+      <a href="/tutorial.html">/tutorial.html</a>
+    </li>
+    <li>
+      <a href="ftp://ftp.com/my.zip">local/path</a>
+    </li>
+    <li>
+      <a href="https://nodejs.org">https://nodejs.org</a>
+    </li>
+    <li>
+      <a href="http://internal.com/test">http://internal.com/test</a>
+    </li>
+  </ul>
+
+  <script>
+    let links = document.querySelectorAll('a');
+
+    for (let link of links) {
+      let href = link.getAttribute('href');
+      if (!href.includes('://')) continue;
+      if (href.startsWith('http://internal.com')) continue;
+      if (!href) continue;
+
+      link.style.color = 'orange';
+    }
+  </script>
+</body>
+
+
+</html>
